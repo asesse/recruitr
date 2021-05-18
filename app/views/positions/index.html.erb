@@ -1,9 +1,11 @@
+<h2>All positions</h2>
+
 <% @positions.each do |position| %>
 <div class="position-card">
-<div class="title"><%= link_to position.title, position_path(position) %></div>
+<div><%= link_to position.title, position_path(position) %></div>
 <div><p>list of skills</p></div>
 <div><p>link to candidates</p></div>
 </div>
 <% end %>
-<%= link_to 'Create position', new_position_path%>
+<div class= "btn"><%= link_to '+New position', new_position_path%></div>
 

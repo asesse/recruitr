@@ -18,8 +18,9 @@ class PositionsController < ApplicationController
 
   def create
     @position = Position.new(position_params)
-    if @position.save
-      redirect_to position_path(@position), notice: "The #{@position.title} position has been successfully created"
+    @position.user = current_user
+    if @position.save!
+      redirect_to @position, notice: "The #{@position.title} position has been successfully created"
     else
       render :new
     end
@@ -32,7 +33,7 @@ class PositionsController < ApplicationController
 
   def destroy
     @position.destroy
-    redirect_to positions_path, "The #{@position.title} position has been successfully deleted"
+    redirect_to positions_path, notice: "The #{@position.title} position has been successfully deleted"
   end
 
   private

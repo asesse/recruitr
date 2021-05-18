@@ -1,0 +1,9 @@
+.btn {
+   a{color: black}
+    padding: 5px 10px;
+    border: 1px solid;
+    border-color: black;
+  &:hover {
+    a{text-decoration:none;}
+  }
+}
