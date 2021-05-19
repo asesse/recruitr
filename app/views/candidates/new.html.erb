@@ -1,0 +1,8 @@
+<%= simple_form_for [@position, @candidate] do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :email %>
+  <%= f.input :linkedin %>
+  <%= f.input :angellist %>
+  <%= f.input :date %>
+  <%= f.submit "Add applicant", class: "btn" %>
+<% end %>
