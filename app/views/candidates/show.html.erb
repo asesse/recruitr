@@ -1,9 +1,9 @@
 <h2>Matching <%= @candidate.first_name %> </h2>
 
-<p><%= @candidate.first_name %> has been added to the position!</p>
+<p><%= @candidate.first_name %> has been added to the <%= @position.title %> position!</p>
 <p>Match <%= @candidate.first_name %> with a recruiter for the skills </p>
 <br>
 <p>Suggested recruiters with the matching skills</p>
 
 <div class="btn"><%= link_to 'Match the applicant' %></div>
-<div class="btn"><%= link_to 'Back', positions_path(@position)  %></div>
+<div class="btn"><%= link_to 'Back', positions_path  %></div>

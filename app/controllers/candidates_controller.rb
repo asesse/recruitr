@@ -3,6 +3,7 @@ class CandidatesController < ApplicationController
 
   def show
     @candidate = Candidate.find(params[:id])
+    @position = @candidate.position
   end
 
   def new

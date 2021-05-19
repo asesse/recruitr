@@ -28,7 +28,7 @@ class PositionsController < ApplicationController
 
   def update
     @position.update(position_params)
-    redirect_to positions_path
+    redirect_to @position
   end
 
   def destroy
