@@ -12,5 +12,5 @@ User.destroy_all
 puts "Creating seeds..."
 user = User.create!(first_name: "margot", last_name: "retif", email: "margot@gmail.com", password: "123456")
 positions = Position.create!(title: 'Backend Intern', description: 'join a great team and become a ruby master', user: user)
-puts "Created #{positions.title}"
+skills = Skill.create!([{name: "backend"}, {name: "frontend"}, {name: "engineer"}, {name: "mobile"}, {name: "marketing"}, {name: "intern"}, {name: "sales"}, {name: "communication"}])
 puts "Finished!"
