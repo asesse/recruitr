@@ -14,3 +14,4 @@
 <div class="btn"><%= link_to 'Edit', edit_position_path(@position) %></div>
 <div class="btn"><%=  link_to 'Remove', position_path(@position), method: :delete, data: {confirm: "Are you sure?"} %></div>
 <div class="btn"><%= link_to 'Add an applicant', new_position_candidate_path(@position) %></div>
+<div class="btn"><%= link_to 'Add skills', new_position_position_skill_path(@position) %></div>

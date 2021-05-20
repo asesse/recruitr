@@ -3,7 +3,7 @@
 <% @positions.each do |position| %>
 <div class="position-card">
 <div><%= link_to position.title, position_path(position) %></div>
-<div><p>list of skills</p></div>
+<div>skills</div>
 <div><%= link_to Candidate.count, position_path(position) %> applicants</div>
 </div>
 <% end %>

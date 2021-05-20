@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'positions#index'
   resources :positions do
     resources :candidates, only: [:new, :create]
+    resources :position_skills, only: [:new, :create]
   end
   resources :candidates, only: [:show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
