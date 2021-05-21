@@ -3,12 +3,19 @@
 <h6>About this position</h6>
 <p><%= @position.description %></p>
 
+<h6>Required skills</h6>
+  <ul>
+    <% @position.skills.each do |skill| %>
+      <li><%= skill.name %></li>
+    <% end %>
+  </ul>
+
 <h6>Applicants</h6>
   <ul>
-  <% @position.candidates.each do |candidate| %>
-    <li><%= link_to candidate.first_name, candidate_path(candidate) %> </li>
-  <% end %>
-</ul>
+    <% @position.candidates.each do |candidate| %>
+      <li><%= link_to candidate.first_name, candidate_path(candidate) %> </li>
+    <% end %>
+  </ul>
 
 <div class="btn"><%= link_to 'Back to all positions', positions_path %></div>
 <div class="btn"><%= link_to 'Edit', edit_position_path(@position) %></div>

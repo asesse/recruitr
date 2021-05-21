@@ -1,11 +1,15 @@
 <h2>All positions</h2>
 
 <% @positions.each do |position| %>
-<div class="position-card">
-<div><%= link_to position.title, position_path(position) %></div>
-<div>skills</div>
-<div><%= link_to Candidate.count, position_path(position) %> applicants</div>
-</div>
+  <div class="position-card">
+    <div><%= link_to position.title, position_path(position) %></div>
+    <div>
+      <% position.skills.each do |skill| %>
+      <span>#<%= skill.name %></span>
+    <% end %>
+    </div>
+    <div><%= link_to Candidate.count, position_path(position) %> applicants</div>
+  </div>
 <% end %>
 <div class= "btn"><%= link_to '+New position', new_position_path%></div>
 
