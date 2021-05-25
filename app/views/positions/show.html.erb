@@ -1,29 +1,32 @@
 
-<h2><%= @position.title %></h2><br>
+<h2><%= @position.title.split(" ").each { |x| x.capitalize!}.join(" ") %></h2>
+<div>
+  <span class="position-btn"><%= link_to 'Back to all positions', positions_path %></span>
+  <span class="position-btn"><%= link_to 'Edit', edit_position_path(@position) %></span>
+  <span class="position-btn"><%=  link_to 'Remove', position_path(@position), method: :delete, data: {confirm: "Are you sure?"} %></span>
+</div>
+<br>
 <h6>About this position</h6>
 <p><%= @position.description %></p>
 
 <h6>Required skills</h6>
   <ul>
     <% @position.skills.each do |skill| %>
-      <li><%= skill.name %></li>
+      <li><%= skill.name.capitalize! %></li>
     <% end %>
   </ul>
 <% if @position.skills.empty? %>
   <div class="btn"><%= link_to 'Add skills', new_position_position_skill_path(@position) %></div>
+  <br>
 <% end %>
-<br>
 <h6>Applicants</h6>
   <ul>
     <% @position.candidates.each do |candidate| %>
-      <li><%= link_to candidate.first_name, candidate_path(candidate) %> </li>
+      <li class="candidate"><%= link_to candidate.first_name, candidate_path(candidate) %> </li>
     <% end %>
   </ul>
-<div class="btn"><%= link_to 'Add an applicant', new_position_candidate_path(@position) %></div>
+<div class="btn"><%= link_to 'Add applicant', new_position_candidate_path(@position) %></div>
 
-<br>
-<br>
-<div class="btn"><%= link_to 'Back to all positions', positions_path %></div>
-<div class="btn"><%= link_to 'Edit', edit_position_path(@position) %></div>
-<div class="btn"><%=  link_to 'Remove', position_path(@position), method: :delete, data: {confirm: "Are you sure?"} %></div>
+
+
 

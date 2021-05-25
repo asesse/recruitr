@@ -1,5 +1,5 @@
 class CandidatesController < ApplicationController
-  before_action :set_position, only: [:new, :create]
+  before_action :set_position, only: [:new, :create, :destroy]
 
   def index
     @candidates = Candidate.all
@@ -23,6 +23,10 @@ class CandidatesController < ApplicationController
       render :new
     end
   end
+
+  # def destroy
+    # @candidate.destroy
+  # end
 
   private
 

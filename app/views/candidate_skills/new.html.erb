@@ -1,0 +1,4 @@
+<%= simple_form_for [@candidate, @candidate_skill] do |f| %>
+  <%= f.association :skill, as: :check_boxes %>
+  <%= f.submit "Submit skills", class: "btn" %>
+<% end %>

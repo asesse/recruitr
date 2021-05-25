@@ -1,9 +1,22 @@
 .btn {
-   a{color: black}
-    padding: 5px 10px;
+    a{color: black}
+    padding: 4px 7px;
     border: 1px solid;
     border-color: black;
+    font-size: 12px;
   &:hover {
     a{text-decoration:none;}
+    background-color: grey;
+    a{color: white;}
+  }
+}
+
+.position-btn {
+    margin-right: 5px;
+    a{text-decoration: underline;}
+    a{color: grey;}
+    font-size: 12px;
+  &:hover {
+    a{color: black}
   }
 }
