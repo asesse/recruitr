@@ -1,0 +1,6 @@
+<%= simple_form_for [@candidate, @interview] do |f| %>
+  <%= f.association :recruiter, as: :check_boxes %>
+  <%= f.input :date %>
+  <%= f.input :time %>
+  <%= f.submit "Match recruiter", class: "btn" %>
+<% end %>

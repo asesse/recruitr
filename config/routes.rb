@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :candidates, only: [:new, :create]
     resources :position_skills, only: [:new, :create]
   end
-  resources :candidates, only: [:show]
+  resources :candidates, only: [:show] do
+    resources :interviews, only: [:show, :new, :create]
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
