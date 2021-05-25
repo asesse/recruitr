@@ -4,6 +4,5 @@ class Position < ApplicationRecord
   has_many :position_skills, dependent: :destroy
   has_many :skills, through: :position_skills
 
-
   validates :title, presence: true
 end

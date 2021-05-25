@@ -1,1 +1,45 @@
-// Specific CSS for your home-page
+h6 {
+  text-decoration: underline;
+  font-style: italic;
+  font-size: 15px;
+}
+
+h2 {
+  margin-bottom: none;
+}
+
+.candidate {
+    a{color: gray;}
+  &:hover {
+    a{color: black}
+  }
+}
+
+li {
+  list-style-type: "- ";
+}
+
+.position-title {
+  a{color: gray;}
+}
+
+.applicants {
+  a{color: gray;}
+}
+
+#navbarDropdown{
+  color: gray;
+  text-decoration: none;
+}
+
+.nav-item {
+  color: gray;
+}
+
+.main-container {
+  margin: auto 40px;
+}
+
+.navbar {
+  margin: none;
+}

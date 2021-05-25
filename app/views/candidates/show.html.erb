@@ -1,14 +1,24 @@
 <h2>Matching <%= @candidate.first_name %> </h2>
 
 <p><%= @candidate.first_name %> has been added to the <%= @position.title %> position!</p>
-<p>Match <%= @candidate.first_name %> with a recruiter for the skills
+
+
+<% if @candidate.recruiters.empty? %>
+  <p>Match <%= @candidate.first_name %> with a recruiter for the skills
   <% @position.skills.each do |skill| %>
       <span>#<%= skill.name %></span>
-    <% end %>
-</p>
-
+  <% end %>
+  </p>
+  <div class="btn"><%= link_to 'Match the applicant', new_candidate_interview_path(@candidate) %></div>
+<% else %>
+  <p><%= @candidate.first_name %> will meet
+  <% @candidate.recruiters.each do |recruiter| %>
+    <span><%= recruiter.first_name %></span>
+  <% end %>
+  on the
+  </p>
+<% end %>
 <br>
 <br>
-<!--<div class="btn"><%= link_to 'See the match', candidate_interviews_path(@candidate) %></div>-->
-<div class="btn"><%= link_to 'Match the applicant', new_candidate_interview_path(@candidate) %></div>
-<div class="btn"><%= link_to 'Back', position_path(@position)  %></div>
+<div class="btn"><%= link_to 'See position', position_path(@position) %></div>
+<!--<div class="btn"><%= link_to 'Delete applicant', candidate_path(@candidate), method: :delete, data: {confirm: "Are you sure?"} %></div>-->

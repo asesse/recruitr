@@ -3,7 +3,7 @@ class Candidate < ApplicationRecord
   has_many :candidate_skills
   has_many :skills, through: :candidate_skills
   has_many :interviews
-  has_many :recruiters, through: :interviews
+  has_many :recruiters, through: :interviews, dependent: :destroy
 
 
   validates :first_name, presence: true

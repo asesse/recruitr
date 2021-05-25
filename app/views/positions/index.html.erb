@@ -2,13 +2,13 @@
 
 <% @positions.each do |position| %>
   <div class="position-card">
-    <div><%= link_to position.title, position_path(position) %></div>
+    <div class="position-title"><%= link_to position.title.split(" ").each { |x| x.capitalize!}.join(" "), position_path(position) %></div>
     <div>
       <% position.skills.each do |skill| %>
       <span>#<%= skill.name %></span>
     <% end %>
     </div>
-    <div><%= link_to Candidate.count, position_path(position) %> applicants</div>
+    <div><span class="applicants"><%= link_to position.candidates.count, candidates_path %> </span> applicants</div>
   </div>
 <% end %>
 <div class= "btn"><%= link_to '+New position', new_position_path%></div>
