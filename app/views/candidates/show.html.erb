@@ -6,8 +6,9 @@
       <span>#<%= skill.name %></span>
     <% end %>
 </p>
-<br>
-<p>Suggested recruiters with the matching skills</p>
 
-<div class="btn"><%= link_to 'Match the applicant' %></div>
+<br>
+<br>
+<!--<div class="btn"><%= link_to 'See the match', candidate_interviews_path(@candidate) %></div>-->
+<div class="btn"><%= link_to 'Match the applicant', new_candidate_interview_path(@candidate) %></div>
 <div class="btn"><%= link_to 'Back', position_path(@position)  %></div>
