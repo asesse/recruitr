@@ -9,8 +9,9 @@
       <li><%= skill.name %></li>
     <% end %>
   </ul>
-<div class="btn"><%= link_to 'Add skills', new_position_position_skill_path(@position) %></div>
-<br>
+<% if @position.skills.empty? %>
+  <div class="btn"><%= link_to 'Add skills', new_position_position_skill_path(@position) %></div>
+<% end %>
 <br>
 <h6>Applicants</h6>
   <ul>
