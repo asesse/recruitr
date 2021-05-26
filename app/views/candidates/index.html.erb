@@ -1,7 +1,7 @@
 <h2>All current applicants</h2>
 <div>
  <% @candidates.each do |candidate| %>
-      <span class="applicants"><%= link_to candidate.first_name, candidate_path(candidate) %></span>
-      <span>- applied for the <%= candidate.position.title %> position</span>
+      <div class="applicants"><%= link_to candidate.first_name, candidate_path(candidate) %>
+      - applied for the <%= candidate.position.title %> position</div>
     <% end %>
 </div>

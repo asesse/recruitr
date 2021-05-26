@@ -3,7 +3,7 @@ class PositionsController < ApplicationController
   before_action :set_position, only: [:show, :edit, :update, :destroy]
 
   def index
-    @positions = Position.all
+    @positions = current_user.positions
   end
 
   def show

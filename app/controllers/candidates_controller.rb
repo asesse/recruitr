@@ -1,5 +1,5 @@
 class CandidatesController < ApplicationController
-  before_action :set_position, only: [:new, :create, :destroy]
+  before_action :set_position, only: [:new, :create]
 
   def index
     @candidates = Candidate.all
@@ -24,9 +24,12 @@ class CandidatesController < ApplicationController
     end
   end
 
-  # def destroy
-    # @candidate.destroy
-  # end
+  def destroy
+    @candidate = Candidate.find(params[:id])
+    @position = @candidate.position
+    @candidate.destroy
+    redirect_to position_path(@position), notice: "#{@candidate.first_name} has been successfully deleted"
+  end
 
   private
 
