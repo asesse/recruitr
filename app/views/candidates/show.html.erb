@@ -14,7 +14,7 @@
   <p>
   <%= @candidate.first_name %> will meet
   <% @candidate.recruiters.each do |recruiter| %>
-    <span><%= recruiter.first_name %>!</span>
+    <span>#<%= recruiter.first_name %>!</span>
   <% end %>
   </p>
 <% end %>

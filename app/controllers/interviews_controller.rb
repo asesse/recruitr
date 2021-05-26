@@ -1,5 +1,5 @@
 class InterviewsController < ApplicationController
-    before_action :set_candidate, only: [:new, :create]
+  before_action :set_candidate, only: [:new, :create]
 
   def show
     @interview = Interview.find(params[:id])

@@ -1,9 +1,5 @@
 class CandidatesController < ApplicationController
-  before_action :set_position, only: [:new, :create]
-
-  def index
-    @candidates = Candidate.all
-  end
+  before_action :set_position, only: [:index, :new, :create]
 
   def show
     @candidate = Candidate.find(params[:id])

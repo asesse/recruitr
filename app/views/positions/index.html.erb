@@ -8,7 +8,7 @@
       <span>#<%= skill.name %></span>
     <% end %>
     </div>
-    <div><span class="applicants"><%= link_to position.candidates.count, candidates_path %> </span> applicants</div>
+    <div><span class="applicants"><%= link_to position.candidates.count, position_path(position) %> </span> applicants</div>
   </div>
 <% end %>
 <div class= "btn"><%= link_to '+New position', new_position_path%></div>

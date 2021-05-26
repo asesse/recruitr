@@ -7,7 +7,7 @@ class CandidateSkillsController < ApplicationController
 
   def create
     @csp = candidate_skills_params[:skill_id]
-    @psp.each do |skill_id|
+    @csp.each do |skill_id|
      next unless skill_id.present?
       CandidateSkill.create(skill_id: skill_id, candidate: @candidate)
     end
